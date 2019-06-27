@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: feign
+    
+server:
+  port: 3001
+  
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka
+
+#通用配置
+#不管请求后台那个为服务,都应用此配置
+ribbon:
+  ConnectTimeout: 1000  #默认值
+  ReadTimeout: 1000     #默认值
+
+#只针对商品为服务配置  
+item-service:
+  ribbon:
+    ConnectTimeout: 500
+    ReadTimeout: 1000
+    MaxAutoRetriesNextServer: 2
+    MaxAutoRetries: 1   
+    
+feign:
+  hystrix:
+    enabled: true
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream           
