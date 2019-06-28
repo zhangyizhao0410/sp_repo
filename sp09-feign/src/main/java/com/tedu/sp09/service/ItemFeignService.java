@@ -27,5 +27,4 @@ public interface ItemFeignService {
 	JsonResult decreaseNumber(@RequestBody List<Item> items);
 	
 
-	
 }
