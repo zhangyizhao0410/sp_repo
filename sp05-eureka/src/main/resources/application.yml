@@ -8,6 +8,9 @@ spring:
 eureka:
   server:
     enable-self-preservation: false
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}      
 #  instance:
 #    hostname: eureka1
 #  client:
