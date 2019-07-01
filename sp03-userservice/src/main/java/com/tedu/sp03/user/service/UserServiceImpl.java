@@ -12,6 +12,10 @@ import com.tedu.sp01.service.UserService;
 import com.tedu.web.util.JsonUtil;
 
 import lombok.extern.slf4j.Slf4j;
+/*
+ * 只有添加了@RefreshScope 注解bean实例,
+ * 才会被重新注入新的配置数据
+ */
 @RefreshScope
 @Slf4j
 @Service
